@@ -14,13 +14,5 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logoutUser(){
-    // remove token
-    localStorage.removeItem('token')
-    // make behaviour subect into null
-    this.userApi.user.next(null)
-    // route to login page
-    this.route.navigateByUrl('login')
-  }
-
+ 
 }
