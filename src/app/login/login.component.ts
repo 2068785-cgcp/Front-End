@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
 import { UserApiService } from '../user/user-api.service';
 
 
@@ -12,7 +11,7 @@ import { UserApiService } from '../user/user-api.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private userService: UserService, private userApi:UserApiService) { }
+  constructor(private router: Router,  private userApi:UserApiService) { }
 
   ngOnInit(): void {
   }
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   loginProcess(data: NgForm) {
     console.log(data);
-    this.userService.loginUser(data).subscribe({
+    this.userApi.loginUser(data).subscribe({
       next: (res) => {
         // login successfull
         if (res.message == 'User login successfull!') {

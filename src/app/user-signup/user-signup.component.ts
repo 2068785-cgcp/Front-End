@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserService } from '../user.service';
+import { UserApiService } from '../user/user-api.service';
 // import { UserApiService } from '../user/user-api.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 })
 export class UserSignupComponent implements OnInit {
 
-  constructor(private userApi:UserService) { }
+  constructor(private userApi:UserApiService) { }
 
   ngOnInit(): void {
   }
