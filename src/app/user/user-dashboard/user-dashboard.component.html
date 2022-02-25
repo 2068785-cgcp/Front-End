@@ -1,10 +1,30 @@
-
-
-<div class="container">
-    
-    <p>user-dashboard works!</p>
-    
+<div class="row">
+    <div class="col-6 mx-auto">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title">{{userData.username}}</h5>
+                <p class="card-text lead">{{userData.email}}</p>
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-primary">Edit Profile</button>
+                    <button type="button" class="btn btn-danger" data-mdb-toggle="modal"
+                        data-mdb-target="#updateUserForm">Delete Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 
+<!-- Modal for delete confirmation-->
+<div class="modal fade" id="updateUserForm" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">Are You Sure to Remove Account?</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" (click)="deleteProfile()" data-mdb-dismiss="modal">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

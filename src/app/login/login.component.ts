@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginProcess(data: NgForm) {
-    console.log(data);
     this.userApi.loginUser(data).subscribe({
       next: (res) => {
         // login successfull
@@ -40,7 +39,6 @@ export class LoginComponent implements OnInit {
           this.userApi.user.next(res.user)
           // navigate to userPage
           this.router.navigateByUrl('user')
-          this.userApi.userAccount.subscribe(res=>console.log(res))
         }
         else{
           console.log(res.message)
